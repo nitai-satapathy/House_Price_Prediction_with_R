@@ -33,3 +33,9 @@ df$age_house <- as.integer(format(Sys.Date(), "%Y")) - df$yr_built #Finding the 
 df$yr_built<-NULL
 df$yr_renovated <- ifelse(df$yr_renovated > 0, 1, 0)
 df$sqft_basement<- ifelse(df$sqft_basement > 0, 1, 0)
+
+colMeans(is.na(df))
+
+
+table(df$price==0) #No. of rows for which house price is 0
+df<-df[df$price!=0,] #Removing rows for which house price is 0
