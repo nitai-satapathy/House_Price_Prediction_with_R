@@ -20,3 +20,6 @@ library(caTools)
 #Importing the data set
 df<-read.csv('../input/housedata/data.csv')
 head(df)
+
+#Data Preperation
+str(df)
