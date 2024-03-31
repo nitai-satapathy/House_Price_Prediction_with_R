@@ -39,3 +39,12 @@ colMeans(is.na(df))
 
 table(df$price==0) #No. of rows for which house price is 0
 df<-df[df$price!=0,] #Removing rows for which house price is 0
+
+#Plotting boxplot to check for outliers
+par(mfrow=c(2, 3))
+boxplot(df$price, main="Price")
+boxplot(df$bedrooms, main="Bedrooms")
+boxplot(df$bathrooms, main="Bathrooms")
+boxplot(df$sqft_living, main="Sqft_Living")
+boxplot(df$sqft_above, main="Sqft_Above")
+boxplot(df$age_house, main="Age of house")
