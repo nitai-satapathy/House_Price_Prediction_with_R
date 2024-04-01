@@ -58,3 +58,12 @@ outlier_treat <- function(x){
   return(x)
 }
 df = data.frame(apply(df, 2, FUN=outlier_treat)) #Applying Outlier func. to the dataset
+
+#Plotting boxplot to check if the outliers have been removed or not
+par(mfrow=c(2, 3))
+boxplot(df$price, main="Price")
+boxplot(df$bedrooms, main="Bedrooms")
+boxplot(df$bathrooms, main="Bathrooms")
+boxplot(df$sqft_living, main="Sqft_Living")
+boxplot(df$sqft_above, main="Sqft_Above")
+boxplot(df$age_house, main="Age of house")
