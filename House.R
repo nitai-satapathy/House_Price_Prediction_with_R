@@ -48,3 +48,13 @@ boxplot(df$bathrooms, main="Bathrooms")
 boxplot(df$sqft_living, main="Sqft_Living")
 boxplot(df$sqft_above, main="Sqft_Above")
 boxplot(df$age_house, main="Age of house")
+
+#Function to remove outliers
+outlier_treat <- function(x){
+  UC = quantile(x, p=0.99,na.rm=T)
+  LC = quantile(x, p=0.01,na.rm=T)
+  x=ifelse(x>UC,UC, x)
+  x=ifelse(x<LC,LC, x)
+  return(x)
+}
+df = data.frame(apply(df, 2, FUN=outlier_treat)) #Applying Outlier func. to the dataset
