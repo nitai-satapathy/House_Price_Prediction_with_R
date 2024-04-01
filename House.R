@@ -67,3 +67,11 @@ boxplot(df$bathrooms, main="Bathrooms")
 boxplot(df$sqft_living, main="Sqft_Living")
 boxplot(df$sqft_above, main="Sqft_Above")
 boxplot(df$age_house, main="Age of house")
+
+#Plotting Correlation Matrix
+cor(df)
+
+require(ggcorrplot)
+corr <- round(cor(df), 1) 
+ggcorrplot(corr, type = "lower",lab = TRUE, lab_size = 5, colors = c("red", "white", "cyan4"), 
+           title="Correlogram of Housing Dataset", ggtheme=theme_bw)
