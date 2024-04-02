@@ -75,3 +75,12 @@ require(ggcorrplot)
 corr <- round(cor(df), 1) 
 ggcorrplot(corr, type = "lower",lab = TRUE, lab_size = 5, colors = c("red", "white", "cyan4"), 
            title="Correlogram of Housing Dataset", ggtheme=theme_bw)
+
+#Plotting Histograms
+par(mfrow=c(2, 3))
+hist(df$price, breaks = 10, col = "coral2", main = "Histogram for price", xlab = "Price")
+hist(df$bedrooms, breaks = 5, col = "gold1", main = "Histogram for no. of bedrooms", xlab = "Bedrooms")
+hist(df$bathrooms, breaks = 10, col = "light green", main = "Histogram for no. of bathrooms", xlab = "Bathrooms")
+hist(df$sqft_living, breaks = 10, col = "sky blue", main = "Histogram for area of living", xlab = "Sqft_living")
+hist(df$floors, breaks = 5, col = "orange", main = "Histogram for no. Floors", xlab = "Floors")
+hist(df$age_house, breaks = 10, col = "pink", main = "Histogram for Age of house", xlab = "Age")
