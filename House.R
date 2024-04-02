@@ -84,3 +84,7 @@ hist(df$bathrooms, breaks = 10, col = "light green", main = "Histogram for no. o
 hist(df$sqft_living, breaks = 10, col = "sky blue", main = "Histogram for area of living", xlab = "Sqft_living")
 hist(df$floors, breaks = 5, col = "orange", main = "Histogram for no. Floors", xlab = "Floors")
 hist(df$age_house, breaks = 10, col = "pink", main = "Histogram for Age of house", xlab = "Age")
+
+#Box plot for the Comparison between the basement and price of the house
+sqftbase<-ifelse(df$sqft_basement > 0, "Yes", "No")
+ggplot(data=df,aes(y=price,x=sqftbase, fill=sqftbase))+geom_boxplot()
