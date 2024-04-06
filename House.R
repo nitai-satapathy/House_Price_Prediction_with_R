@@ -94,3 +94,6 @@ ggplot(data=df,aes(y=sqft_living,x=price))+geom_point()+geom_smooth(method="lm",
 
 #Scatter plot to see the relation between no. of bedrooms and price of the house
 ggplot(df,aes(x=sqft_living,y=price,col=factor(bedrooms))) +geom_point() +geom_smooth(method="lm",se=F)+ labs(col="Bedrooms")
+
+#Scatter plot to see the relation between condition and price of the house
+ggplot(df,aes(x=sqft_living,y=price,col=factor(condition))) +geom_point() +geom_smooth(method="lm",se=F)+ labs(col="Condition")
