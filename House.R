@@ -88,3 +88,6 @@ hist(df$age_house, breaks = 10, col = "pink", main = "Histogram for Age of house
 #Box plot for the Comparison between the basement and price of the house
 sqftbase<-ifelse(df$sqft_basement > 0, "Yes", "No")
 ggplot(data=df,aes(y=price,x=sqftbase, fill=sqftbase))+geom_boxplot()
+
+#Scatter plot to see the relation between area and price of the house
+ggplot(data=df,aes(y=sqft_living,x=price))+geom_point()+geom_smooth(method="lm",se=F)
