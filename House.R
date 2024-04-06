@@ -91,3 +91,6 @@ ggplot(data=df,aes(y=price,x=sqftbase, fill=sqftbase))+geom_boxplot()
 
 #Scatter plot to see the relation between area and price of the house
 ggplot(data=df,aes(y=sqft_living,x=price))+geom_point()+geom_smooth(method="lm",se=F)
+
+#Scatter plot to see the relation between no. of bedrooms and price of the house
+ggplot(df,aes(x=sqft_living,y=price,col=factor(bedrooms))) +geom_point() +geom_smooth(method="lm",se=F)+ labs(col="Bedrooms")
