@@ -95,3 +95,10 @@ ggplot(data=df,aes(y=sqft_living,x=price))+geom_point()+geom_smooth(method="lm",
 #Scatter plot to see the relation between no. of bedrooms and price of the house
 ggplot(df,aes(x=sqft_living,y=price,col=factor(bedrooms))) +geom_point() +geom_smooth(method="lm",se=F)+ labs(col="Bedrooms")
 
+# Splitting the dataset into the Training set and Test set
+require(caTools)
+sample.split(df$price, SplitRatio = 0.60)->split_index
+training_set <- subset(df,split_index == TRUE)
+test_set <- subset(df, split_index == FALSE)
+print(paste("No. of rows for training:",nrow(training_set)))
+print(paste("No. of rows for testing:",nrow(test_set)))
