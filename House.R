@@ -107,3 +107,11 @@ print(paste("No. of rows for testing:",nrow(test_set)))
 lm(price~.-yr_renovated -condition ,data=training_set)->mod1
 predict(mod1,test_set)->result
 summary(mod1)
+
+cbind(actual=test_set$price,predicted=result)->compare_result 
+as.data.frame(compare_result)->compare_result
+compare_result$actual-compare_result$predicted->error #Finding the error between actual and predicted values
+as.data.frame(error)->error
+cbind(compare_result,error)->final
+View(final)
+
