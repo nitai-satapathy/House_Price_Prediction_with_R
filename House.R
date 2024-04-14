@@ -102,3 +102,8 @@ training_set <- subset(df,split_index == TRUE)
 test_set <- subset(df, split_index == FALSE)
 print(paste("No. of rows for training:",nrow(training_set)))
 print(paste("No. of rows for testing:",nrow(test_set)))
+
+#Model Fitting
+lm(price~.-yr_renovated -condition ,data=training_set)->mod1
+predict(mod1,test_set)->result
+summary(mod1)
