@@ -115,3 +115,5 @@ as.data.frame(error)->error
 cbind(compare_result,error)->final
 View(final)
 
+#Plot Between Actual and predicted values
+ggplot(data=test_set,aes(y=result,x=price))+geom_point(colour='blue')+labs( y='Predicted Values',x='Actual Values')
