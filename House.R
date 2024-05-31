@@ -117,7 +117,3 @@ View(final)
 
 #Plot Between Actual and predicted values
 ggplot(data=test_set,aes(y=result,x=price))+geom_point(colour='blue')+labs( y='Predicted Values',x='Actual Values')
-
-
-
-matrix_coef <- summary(lm(price~.-yr_renovated -condition ,data=training_set))$coefficients 
