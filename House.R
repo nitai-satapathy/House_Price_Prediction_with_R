@@ -122,3 +122,8 @@ ggplot(data=test_set,aes(y=result,x=price))+geom_point(colour='blue')+labs( y='P
 matrix_coef <- summary(lm(price~.-yr_renovated -condition ,data=training_set))$coefficients 
 coefficients <- matrix_coef[ , 1]                   
 as.data.frame(coefficients)
+
+#making predicton
+House_Price_Prediction = -2.097455e+05+ (2*-4.824656e+04)+ (2* 5.734890e+04)+ (1350.0*1.663381e+02)+
+  (2560.0*-7.527829-01)+ (1.0*5.304223+04)+ (1350.0*1.022256e+02)+ (45*3.020174e+03)
+House_Price_Prediction
